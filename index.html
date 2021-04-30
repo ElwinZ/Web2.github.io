@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link type="text/css"  href="./leileiVideo.css" rel="stylesheet ">
+    <title>旋转立方体相册</title>
+  <style>
+    
+body{
+    background: url(./bookshow2.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    /* 设置了这个属性就可以保证网页缩放的时候背景不发生改变 */
+}
+.sun{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    bottom: 170px;
+    animation: sun 5s infinite;
+}
+@keyframes sun{
+    0%{
+        left: 730px;
+        bottom: 0px;
+        opacity: 0;
+    }
+    10%{
+        left: 100px;
+        bottom: 160px;
+        opacity: 1;
+    }
+    35%{
+        left: 365px;
+        bottom: 525px;
+        opacity: 0;
+    }
+    50%{
+        left: 730px;
+        bottom: 650px;
+        opacity: 1;
+    }
+    70%{
+        left: 1173px;
+        bottom: 360px;
+        opacity: 0;
+    }
+    85%{
+        left: 1300px;
+        bottom: 190px;
+        opacity: 1;
+    }
+    100%{
+        left: 730px;
+        bottom: 0px;
+        opacity: 0;
+    }
+    }
+#react{
+    width: 200px;
+    height:200px;
+    margin: 300px auto;
+    transform-style:preserve-3d;
+    animation:rotate 12s infinite;
+    animation-timing-function: linear;
+}
+#react div{
+    position:absolute;
+    transition: all .3s;
+}
+#react span{
+    position:absolute;
+    transition: all .3s;
+}
+div .out_pic{
+    width:200px;
+    height:200px;
+    opacity:0.9;
+}
+div .in_pic{
+    width:100px; 
+    height:100px;
+}
+#react span{
+    display:block;
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:50px;
+    left:50px;
+}
+@keyframes rotate{
+    from{transform: rotateX(0deg) rotateY(0deg);}
+    to{transform: rotateX(360deg) rotateY(360deg);}
+}
+.out_front{
+    transform:translateZ(60px);
+}
+.out_back{
+    transform:translateZ(-60px);
+}
+.out_left{
+    transform:rotateY(90deg) translateZ(60px);
+}
+.out_right{
+    transform: rotateY(-90deg) translateZ(60px);
+}
+.out_top{
+    transform:rotateX(90deg) translateZ(60px) ;
+}
+.out_bottom{
+    transform: rotateX(-90deg) translateZ(60px);
+}
+.in_front{
+    transform:translateZ(50px) scale(1.5);
+}
+.in_back{
+    transform:translateZ(-50px) scale(1.5);
+}
+.in_left{
+    transform:rotateY(90deg) translateZ(50px) scale(1.5);
+}
+.in_right{
+    transform: rotateY(-90deg) translateZ(50px) scale(1.5);
+}
+.in_top{
+    transform:rotateX(90deg) translateZ(50px) scale(1.5);
+}
+.in_bottom{
+    transform: rotateX(-90deg) translateZ(50px) scale(1.5);
+}
+  
+/*外面的图片散开*/
+#react:hover .out_front{
+    transform:translateZ(300px) scale(3);
+}
+#react:hover .out_back{
+    transform:translateZ(-300px) scale(3);
+}
+#react:hover .out_left{
+    transform:rotateY(90deg) translateZ(300px) scale(3);
+}
+#react:hover .out_right{
+    transform: rotateY(-90deg) translateZ(300px) scale(3);
+}
+#react:hover .out_top{
+    transform:rotateX(90deg) translateZ(165px) scale(3,5);
+}
+#react:hover .out_bottom{
+    transform: rotateX(-90deg) translateZ(165px) scale(3,5);
+}
+
+/*里面的图片散开*/
+#react:hover .in_front{
+    transform:translateZ(150px) scale(1.8);
+}
+#react:hover .in_back{
+    transform:translateZ(-150px) scale(1.8);
+}
+#react:hover .in_left{
+    transform:rotateY(90deg) translateZ(150px) scale(1.8);
+}
+#react:hover .in_right{
+    transform: rotateY(-90deg) translateZ(150px) scale(1.8);
+}
+#react:hover .in_top{
+    transform:rotateX(90deg) translateZ(150px) scale(1.8);
+}
+#react:hover .in_bottom{
+    transform: rotateX(-90deg) translateZ(150px) scale(1.8);
+}
+
+@charset "utf-8";
+/* CSS Document */
+  </style>
+</head>
+<body>
+<div id="react">
+    <div class="out_front">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_back">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_left">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_right">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_top">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_bottom">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <span class="in_front">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <pan class="in_back">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_left">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_right">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_top">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_bottom">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+</div>
+
+<!-- 太阳动画图片 -->
+<img src="./bg-sun.png"  class="sun">
+<!-- 背景音乐 -->
+</body>
+<script>
+        window.onload =function(){
+        toggleSound();
+    }
+    function toggleSound() {
+            var music = document.getElementById("vd");//获取ID  
+                console.log(music.paused); //判读是否播放  
+                music.paused=false; //	true|false。true 指示音频/视频已暂停。否则为 false。
+                music.play(); //没有就播放 
+            
+        }
+//每一毫秒执行一次函数内部
+setInterval("toggleSound()",1000);
+</script>
+</html>
