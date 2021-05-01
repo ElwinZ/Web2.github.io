@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link type="text/css"  href="./leileiVideo.css" rel="stylesheet ">
+    <title>旋转立方体相册</title>
+</head>
+<body>
+<div id="react">
+    <div class="out_front">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_back">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_left">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_right">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_top">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <div class="out_bottom">
+        <video src="./bg.mp4" autoplay loop muted class="out_pic">
+    </div>
+    <span class="in_front">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <pan class="in_back">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_left">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_right">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_top">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+    <span class="in_bottom">
+        <video src="./bg.mp4" autoplay loop muted class="in_pic">
+    </span>
+</div>
+
+<!-- 太阳动画图片 -->
+<img src="./bg-sun.png"  class="sun">
+<!-- 背景音乐 -->
+</body>
+<script>
+        window.onload =function(){
+        toggleSound();
+    }
+    function toggleSound() {
+            var music = document.getElementById("vd");//获取ID  
+                console.log(music.paused); //判读是否播放  
+                music.paused=false; //	true|false。true 指示音频/视频已暂停。否则为 false。
+                music.play(); //没有就播放 
+            
+        }
+//每一毫秒执行一次函数内部
+setInterval("toggleSound()",1000);
+</script>
+</html>
